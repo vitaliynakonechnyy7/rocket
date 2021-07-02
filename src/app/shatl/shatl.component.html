@@ -1,0 +1,13 @@
+
+
+<div class="start" *ngIf='toggle; else img2'><!--  -->
+  <img src='./assets/img/shatl.png' alt="">
+</div>
+<ng-template #img2>
+  <div class="vzlet" >
+  <img src="./assets/img/shatVzlet.png" alt="">
+</div>
+</ng-template>
+
+
+<button mat-raised-button color="warn" (click)="ontoggle()">zhmi na menya</button>

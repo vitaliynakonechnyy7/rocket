@@ -1,0 +1,67 @@
+ul {
+  width: 180px; /* Ширина меню */
+  list-style: none; /* Для списка убираем маркеры */
+  margin: 0; /* Нет отступов вокруг */
+  padding: 0; /* Убираем поля вокруг текста */
+  font-family: Arial, sans-serif; /* Рубленый шрифт для текста меню */
+  font-size: 10pt; /* Размер названий в пункте меню */
+ }
+ li ul {
+  position: absolute; /* Подменю позиционируются абсолютно */
+  display: none; /* Скрываем подменю */
+  margin-left: 165px; /* Сдвигаем подменю вправо */
+  margin-top: -2em; /* Сдвигаем подменю вверх */
+ }
+ li a {
+  display: block; /* Ссылка как блочный элемент */
+  padding: 5px; /* Поля вокруг надписи */
+  text-decoration: none; /* Подчеркивание у ссылок убираем */
+  color: #666; /* Цвет текста */
+  border: 1px solid #ccc;/* Рамка вокруг пунктов меню */
+  background-color: #f0f0f0; /* Цвет фона */
+  border-bottom: none; /* Границу снизу не проводим */
+ }
+ li a:hover {
+  color: #ffe; /* Цвет текста активного пункта */
+  background-color: #5488af; /* Цвет фона активного пункта */
+ }
+ li:hover ul {
+  display: block; /* При выделении пункта курсором мыши отображается подменю */
+ }
+ .brd {
+  border-bottom: 1px solid #ccc; /* Линия снизу */
+ }
+
+.card.highlight-card {
+  background-color: #1976d2;
+  color: white;
+  font-weight: 600;
+  border: none;
+  max-height: 550px;
+  min-width:420px ;
+  max-width: 421px;
+  position: relative;
+}
+
+mat-form-field {
+  margin-right: 12px;
+}
+
+.content{
+  display: flex;
+  justify-content: space-around;
+}
+
+.mat-icon {
+  background-repeat: no-repeat;
+  display: inline-block;
+  fill: currentColor;
+  height: 24px;
+  width: 24px;
+}
+.content {
+  display: flex;
+  margin: 82px auto 32px;
+  padding: 0 16px;
+  max-width: 960px;
+}

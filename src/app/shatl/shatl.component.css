@@ -1,0 +1,15 @@
+.start img {
+  width: 400px;
+  height: auto;
+}
+.vzlet img {
+  position: absolute;
+  top: 0;
+  width: 400px;
+  height: auto;
+  transition: top 5s ease-out 0s;
+}
+
+.vzlet img:hover {
+  top: -300px;
+}

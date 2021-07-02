@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Raketa</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+
+
+ <!--  Toolbar -->
+  <div class="toolbar" role="banner">
+      <img width="40" alt="Angular Logo"
+          src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==" />
+    <span>Welcome</span>
+    <div class="spacer"></div>
+  </div>
+
+  <div class="content" role="main">
+    <div id="roketStay">
+      <img src='./assets/img/shatl.png' style="height: 600px">
+    </div>
+
+    <div ><span id="novoeSlovo"></span></div>
+
+    <div id="blokStar" style="margin: 20px;" class="card highlight-card card-small">
+      <div style="margin: 20px; font-size:  25px;" class="spanOtchet">
+
+        <span> Проверка всех систем..</span>
+        <hr>
+        <li>обратный отсчет
+          [ <span id="timer"> 5 </span>
+          ]</li>
+        <li>Количество топлива [<span id="palivo"> 70 </span>]%</li>
+        <li>Экипаж на борту [<span id="ekipazh"> 4 </span>] чел</li>
+        <li>Закрыты ли шлюзы <span id="shlusi">[ ]</span></li>
+        <li>Включение двигателей <span id="dvigatel">[ ]</span></li>
+        <li>Отрыв <span id="vzlet">[ ]</span></li>
+      </div>
+      <div style="padding: 50px;">
+        <button style="padding: 10px;" onclick="start()" mat-raised-button color="warn">Начать обратный отсчет</button>
+      </div>
+    </div>
+
+
+
+
+    <svg id="clouds" alt="Gray Clouds Background" xmlns="http://www.w3.org/2000/svg" width="2611.084" height="485.677"
+      viewBox="0 0 2611.084 485.677">
+      <path id="Path_39" data-name="Path 39"
+        d="M2379.709,863.793c10-93-77-171-168-149-52-114-225-105-264,15-75,3-140,59-152,133-30,2.83-66.725,9.829-93.5,26.25-26.771-16.421-63.5-23.42-93.5-26.25-12-74-77-130-152-133-39-120-212-129-264-15-54.084-13.075-106.753,9.173-138.488,48.9-31.734-39.726-84.4-61.974-138.487-48.9-52-114-225-105-264,15a162.027,162.027,0,0,0-103.147,43.044c-30.633-45.365-87.1-72.091-145.206-58.044-52-114-225-105-264,15-75,3-140,59-152,133-53,5-127,23-130,83-2,42,35,72,70,86,49,20,106,18,157,5a165.625,165.625,0,0,0,120,0c47,94,178,113,251,33,61.112,8.015,113.854-5.72,150.492-29.764a165.62,165.62,0,0,0,110.861-3.236c47,94,178,113,251,33,31.385,4.116,60.563,2.495,86.487-3.311,25.924,5.806,55.1,7.427,86.488,3.311,73,80,204,61,251-33a165.625,165.625,0,0,0,120,0c51,13,108,15,157-5a147.188,147.188,0,0,0,33.5-18.694,147.217,147.217,0,0,0,33.5,18.694c49,20,106,18,157,5a165.625,165.625,0,0,0,120,0c47,94,178,113,251,33C2446.709,1093.793,2554.709,922.793,2379.709,863.793Z"
+        transform="translate(142.69 -634.312)" fill="#eee" />
+    </svg>
+
+  </div>
+
+
+
+
+  <app-root></app-root>
+</body>
+<script>
+
+/* let yaviSlovo = 'Privet Atalka';
+
+document.getElementById("novoeSlovo").innerHTML= yaviSlovo;
+
+
+  function start() {
+
+    let stopTimer = setInterval(function () {
+      let secondTimer = document.querySelector('#timer');
+      secondTimer.innerText = secondTimer.innerText - 1;
+
+
+      if (secondTimer.innerText == 0) {
+        clearInterval(stopTimer);
+
+        let roketFlay = new Image(500, 700);
+        roketFlay.src = './assets/img/shatVzlet.png';
+        document.body.appendChild(roketFlay);
+
+        roketFlay.id = 'roketFlay1'
+        console.dir(roketFlay);
+
+        document.getElementById("roketStay").style.display = 'none';
+        //document.getElementById("blokStar").style.display = 'none';
+        document.getElementById('timer').style.display = 'none';
+
+        let palivo = 70;
+
+        if (palivo == 70) {
+          let palivo = document.querySelector('#palivo');
+          alert('заправлено около 70% топлива');
+          let plusPalivo = prompt('сколько еще дозаправить ?');
+          palivo.innerText = Number(palivo.innerText) + Number(plusPalivo);
+
+        } else if (palivo <= 80) {
+          alert('заправлено около 80% топлива');
+          prompt('до полного бака 20% ?')
+
+        } else if (palivo <= 90) {
+          alert('заправлено около 90% топлива');
+          prompt('до полного бака 10% дозаправить?')
+
+        } else if (palivo == 100) {
+          alert('заправлено до полного - можно лететь');
+        };
+
+        if (palivo < 90) {
+          alert('вылет задерживается-недостаточно топлива')
+          console.log(palivo)
+        } else if (palivo >= 100) {
+          alert('заправлено больше допустимого уровня - можем рвануть');
+          console.log(palivo)
+        }
+
+
+          var ekipazhBort = document.querySelector('#ekipazh');
+          var maxEkip = 5;
+          var ekipaZh = [Math.floor(Math.random() * maxEkip)];
+          ekipazhBort.innerText = Number(ekipaZh);
+
+        if (ekipaZh == 4) {
+
+          alert('Все на месте. Можно взлетать.');
+          console.log(ekipazhBort);
+
+        } else if (ekipaZh == 3) {
+          alert('Нехватает 1 члена экипажа')
+          document.getElementById("roketStay");
+          document.getElementById("roketFlay1").style.display = 'none';
+
+        } else if (ekipaZh < 3) {
+          alert('Вообще народу мало')
+          document.getElementById("roketStay");
+          document.getElementById("roketFlay1").style.display = 'none';
+
+        }
+
+        console.log(ekipazhBort);
+
+
+      }
+    }, 1000);
+  } */
+
+          /* var ekipazhBort = document.querySelector('#ekipazh');
+          var maxEkip = 5;
+          var ekipaZh = [Math.floor(Math.random() * maxEkip)];
+          ekipazhBort.innerText = Number(ekipaZh);
+
+          console.log(ekipazhBort);*/
+
+
+</script>
+
+</html>

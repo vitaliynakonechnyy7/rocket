@@ -1,0 +1,133 @@
+
+<div class="responsiveBlock">
+  <p>{{now |date: 'medium'}}</p>
+<div class="car-card">
+
+
+  <h3><mark>Марка:</mark>&ensp;{{name}}<small>&ensp; {{model}}</small></h3>
+  <div class="car-card-first2block">
+    <div class="first2blockMatCard">
+  <mat-card>
+    <div class="">
+      Характеристики авто:
+      <hr>
+      <ul>
+        <li>Пробег: </li>{{speed}} км
+        <li>Цвет кузова: </li><strong>{{colors.car}}</strong>
+        <li>Цвет салона: </li><strong>{{colors.salon}}</strong>
+        <li>Цвет дисков: </li><strong>{{colors.wheels}}</strong>
+      </ul>
+    </div>
+  </mat-card>
+
+  <hr><!-- (click)="editCarOpt()" -->
+  <button mat-mini-fab color="accent"
+   (click)="editCarOpt()">
+    <mat-icon>edit</mat-icon>
+  </button>
+
+
+  <mat-accordion *ngIf= visibleElem; class="example-headers-align" multi>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Марка машины
+        </mat-panel-title>
+        <mat-icon>
+          <!-- account_circle -->
+        </mat-icon>
+      </mat-expansion-panel-header>
+      <mat-form-field>
+        <mat-label>Марка машины</mat-label>
+        <input matInput [(ngModel)]='name' name='model'>
+      </mat-form-field>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Модель машины
+        </mat-panel-title>
+        <mat-icon>
+          <!-- account_circle -->
+        </mat-icon>
+      </mat-expansion-panel-header>
+      <mat-form-field>
+        <mat-label>Модель</mat-label>
+        <input matInput [(ngModel)]='model' name='moDel'>
+      </mat-form-field>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Пробег
+        </mat-panel-title>
+        <mat-icon>
+          <!-- account_circle -->
+        </mat-icon>
+      </mat-expansion-panel-header>
+      <mat-form-field>
+        <mat-label>Пробег</mat-label>
+        <input matInput [(ngModel)]='speed' name='distance'>
+      </mat-form-field>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Цвет кузова
+        </mat-panel-title>
+        <mat-icon>
+          <!-- account_circle -->
+        </mat-icon>
+      </mat-expansion-panel-header>
+      <mat-form-field>
+        <mat-label>Цвет кузова</mat-label>
+        <input matInput [(ngModel)]='colors.car' name='colorKuzov'>
+      </mat-form-field>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>
+</div>
+</div>
+  <br>
+
+  <div> Опции:
+    <hr>
+    <div class="form-group">
+      <form class="example-form" (submit)='addOpt(message.value)'>
+        <mat-form-field class="example-full-width">
+          <mat-label>Добавить новую опцию</mat-label>
+          <input id='option' matInput #message maxlength="256" placeholder="Ex. I need help with...">
+          <mat-hint align="start"><strong>Не разглашать личную информацию</strong> </mat-hint>
+          <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
+        </mat-form-field>
+      </form>
+      <button type="submit" mat-raised-button color="accent" class="btn">Добавить</button>
+    </div>
+
+    <mat-card class="options-car">
+      <ul>
+        <li *ngFor='let ind_opt of options'>
+          {{ind_opt}} <button mat-mini-fab color="accent" (click)="deleteOpt(ind_opt)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </li>
+      </ul>
+    </mat-card>
+  </div>
+</div>
+<div class="buttomViborEkipazh" style="margin-top: 7%;">
+
+Выбери участника экспедиции
+  <!-- <hr> -->
+  <br >
+  <button mat-raised-button color="primary" (click)="carSelect('opel')" style="margin-top: 2%;">Opel</button>
+  <button mat-raised-button color="warn" (click)="carSelect('tesla')">Tesla</button>
+  <button mat-raised-button color="accent" (click)="carSelect('byuick')">Byuick</button>
+</div>
+
+
+<app-instruments></app-instruments>
+<!-- </div> -->

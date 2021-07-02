@@ -1,0 +1,107 @@
+.example-container {
+  width: 500px;
+  height: 300px;
+}
+
+.example-sidenav-content {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.example-sidenav {
+  padding: 20px;
+}
+
+
+.search{
+  margin: 20px;
+  flex: auto;
+  padding: 10px;
+}
+
+.mat-drawer-container{
+  background-color:rgba(255, 255, 255, 0);
+}
+
+.mat-drawer {
+  background: inherit;
+  z-index: 1;
+  overflow: hidden;
+  margin: 0 auto;
+  padding: 2rem;
+  box-sizing: border-box;
+ /*  box-shadow: 7px 9px 15px -1px rgba(134, 142, 148, 0.6); */
+  border-radius: 0 0 12px 0 ;
+  background:rgba(111, 114, 117, 0.308);
+	backdrop-filter: blur(4px);
+}
+
+ul {
+    width: 150px; /* Ширина меню */
+
+    list-style: none; /* Для списка убираем маркеры */
+    margin-left: 15px; /* Нет отступов вокруг */
+    padding: 0; /* Убираем поля вокруг текста */
+    font-family: Arial, sans-serif; /* Рубленый шрифт для текста меню */
+    font-size: 10pt; /* Размер названий в пункте меню */
+   }
+
+li a {
+  display: block; /* Ссылка как блочный элемент */
+  padding: 3px; /* Поля вокруг надписи */
+  text-decoration: none; /* Подчеркивание у ссылок убираем */
+  color: #666; /* Цвет текста */
+  border: 1px solid #ccc;/* Рамка вокруг пунктов меню */
+  background-color: #f0f0f0; /* Цвет фона */
+  border-bottom: none; /* Границу снизу не проводим */
+ }
+
+ li a:hover {
+  color: #ffe; /* Цвет текста активного пункта */
+  background-color: #5488af; /* Цвет фона активного пункта */
+ }
+ li:hover ul {
+  display: block; /* При выделении пункта курсором мыши отображается подменю */
+
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 8px 0;
+}
+
+p {
+  margin: 0;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.toolbar  {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  background-color: #1976d2;
+  color: white;
+  font-weight: 600;
+}
+
+.toolbar img {
+  margin: 0 16px;
+}
+
+
+
+
