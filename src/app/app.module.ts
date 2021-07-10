@@ -16,7 +16,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { ToolbarComponent } from './toolbar/toolbar.component';
-import { ModalWindComponent } from './modal-wind/modal-wind.component';
 import { InstrumentsComponent } from './instruments/instruments.component';
 import { ShatlComponent } from './shatl/shatl.component';
 import { MatInputModule } from '@angular/material/input';
@@ -33,7 +32,6 @@ const appRoutes: Routes=[
   declarations: [
     AppComponent,
     ToolbarComponent,
-    ModalWindComponent,
     InstrumentsComponent,
     ShatlComponent,
     CarsComponent

@@ -1,5 +1,7 @@
 # Raketa
 
+ng g c 'name' --skipTests команда создает компонент без юнит тестов
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.3.
 
 ## Development server

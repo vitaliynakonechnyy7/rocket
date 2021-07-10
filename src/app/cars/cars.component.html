@@ -4,18 +4,18 @@
 <div class="car-card">
 
 
-  <h3><mark>Марка:</mark>&ensp;{{name}}<small>&ensp; {{model}}</small></h3>
+  <h3><mark>Имя участника экспедиции:</mark>&ensp;{{name}}<small>&ensp; {{model}}</small></h3>
   <div class="car-card-first2block">
     <div class="first2blockMatCard">
   <mat-card>
     <div class="">
-      Характеристики авто:
+      Данные участников:
       <hr>
       <ul>
-        <li>Пробег: </li>{{speed}} км
-        <li>Цвет кузова: </li><strong>{{colors.car}}</strong>
-        <li>Цвет салона: </li><strong>{{colors.salon}}</strong>
-        <li>Цвет дисков: </li><strong>{{colors.wheels}}</strong>
+        <li>Выносливость: </li>{{speed}} км
+        <li>Устойчивость к стрессу: </li><strong>{{colors.car}}</strong>
+        <li>Умение уживаться с другими: </li><strong>{{colors.salon}}</strong>
+        <li>Трудолюбие: </li><strong>{{colors.wheels}}</strong>
       </ul>
     </div>
   </mat-card>
@@ -31,14 +31,14 @@
     <mat-expansion-panel>
       <mat-expansion-panel-header>
         <mat-panel-title>
-          Марка машины
+          Имя участника экспедиции
         </mat-panel-title>
         <mat-icon>
           <!-- account_circle -->
         </mat-icon>
       </mat-expansion-panel-header>
       <mat-form-field>
-        <mat-label>Марка машины</mat-label>
+        <mat-label>Выносливость</mat-label>
         <input matInput [(ngModel)]='name' name='model'>
       </mat-form-field>
     </mat-expansion-panel>
@@ -46,14 +46,14 @@
     <mat-expansion-panel>
       <mat-expansion-panel-header>
         <mat-panel-title>
-          Модель машины
+          Устойчивость к стрессу
         </mat-panel-title>
         <mat-icon>
           <!-- account_circle -->
         </mat-icon>
       </mat-expansion-panel-header>
       <mat-form-field>
-        <mat-label>Модель</mat-label>
+        <mat-label>Умение уживаться с другими</mat-label>
         <input matInput [(ngModel)]='model' name='moDel'>
       </mat-form-field>
     </mat-expansion-panel>
@@ -61,14 +61,14 @@
     <mat-expansion-panel>
       <mat-expansion-panel-header>
         <mat-panel-title>
-          Пробег
+          Трудолюбие
         </mat-panel-title>
         <mat-icon>
           <!-- account_circle -->
         </mat-icon>
       </mat-expansion-panel-header>
       <mat-form-field>
-        <mat-label>Пробег</mat-label>
+        <mat-label>Трудолюбие</mat-label>
         <input matInput [(ngModel)]='speed' name='distance'>
       </mat-form-field>
     </mat-expansion-panel>
@@ -76,7 +76,7 @@
     <mat-expansion-panel>
       <mat-expansion-panel-header>
         <mat-panel-title>
-          Цвет кузова
+          <!-- Цвет кузова -->
         </mat-panel-title>
         <mat-icon>
           <!-- account_circle -->
@@ -127,7 +127,3 @@
   <button mat-raised-button color="warn" (click)="carSelect('tesla')">Tesla</button>
   <button mat-raised-button color="accent" (click)="carSelect('byuick')">Byuick</button>
 </div>
-
-
-<app-instruments></app-instruments>
-<!-- </div> -->
