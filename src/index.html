@@ -15,12 +15,12 @@
 
  
 
-  <div class="content" role="main">
+  <div class="content" role="main" style="display: flex;">
     <div id="roketStay">
       <img src='./assets/img/shatl.png' style="height: 600px">
     </div>
 
-    <div ><span id="novoeSlovo"></span></div>
+   <!--  <div><span id="novoeSlovo"></span></div> -->
 
     <div id="blokStar" style="margin: 20px;" class="card highlight-card card-small">
       <div style="margin: 20px; font-size:  25px;" class="spanOtchet">
@@ -31,7 +31,7 @@
           [ <span id="timer"> 5 </span>
           ]</li>
         <li>Количество топлива [<span id="palivo"> 70 </span>]%</li>
-        <li>Экипаж на борту [<span id="ekipazh"> 4 </span>] чел</li>
+        <li>Экипаж на борту [<span id="ekipazh"> 4  </span>] чел</li>
         <li>Закрыты ли шлюзы <span id="shlusi">[ ]</span></li>
         <li>Включение двигателей <span id="dvigatel">[ ]</span></li>
         <li>Отрыв <span id="vzlet">[ ]</span></li>
@@ -53,103 +53,96 @@
 
   </div>
 
-
-
-
   <app-root></app-root>
-</body>
-<script>
-// design a rocket launch pad
 
-  function start() {
+  <script>
+    // design a rocket launch pad
+    
+      function start() {
+    
+        let stopTimer = setInterval(function () {
+          let secondTimer = document.querySelector('#timer');
+          secondTimer.innerText = secondTimer.innerText - 1;
+    
+    
+          if (secondTimer.innerText == 0) {
+            clearInterval(stopTimer);
+    
+            let roketFlay = new Image(500, 700);
+                roketFlay.src = './assets/img/shatVzlet.png';
+               document.body.appendChild(roketFlay);
+    
+            roketFlay.id = 'roketFlay1'
+            console.dir(roketFlay);
+    
+            document.getElementById("roketStay").style.display = 'none';
+            //document.getElementById("blokStar").style.display = 'none';
+            document.getElementById('timer').style.display = 'none';
+    
+    
+            // calculate how much let palivo is available if 100% overhaul is allowed
+    
+            let palivo = 70;
+    
+            if (palivo <= 70) {
+              let palivo = document.querySelector('#palivo');
+              alert('заправлено около 70% топлива');
+              let plusPalivo = prompt('сколько еще дозаправить ?');
+              palivo.innerText = Number(palivo.innerText) + Number(plusPalivo);
+    
+            } else if (palivo <= 80) {
+              alert('заправлено около 80% топлива');
+              prompt('до полного бака 20% ?')
+    
+            } else if (palivo <= 90) {
+              alert('заправлено около 90% топлива');
+              prompt('до полного бака 10% дозаправить?')
+    
+            } else if (palivo == 100) {
+              alert('заправлено до полного - можно лететь');
+            };
+    
+            if (palivo > 90) {
+              alert('вылет задерживается-недостаточно топлива')
+              console.log(palivo)
+            } else if (palivo >= 100) {
+              alert('заправлено больше допустимого уровня - можем рвануть');
+              console.log(palivo)
+            }
+    
+    
+            if (ekipazh == 4) {
+    
+              alert('Все на месте. Можно взлетать.');
+              console.log(ekipazhBort);
+              document.getElementById("roketFlay1").style.display = 'visible';
 
-    let stopTimer = setInterval(function () {
-      let secondTimer = document.querySelector('#timer');
-      secondTimer.innerText = secondTimer.innerText - 1;
-
-
-      if (secondTimer.innerText == 0) {
-        clearInterval(stopTimer);
-
-        let roketFlay = new Image(500, 700);
-        roketFlay.src = './assets/img/shatVzlet.png';
-        document.body.appendChild(roketFlay);
-
-        roketFlay.id = 'roketFlay1'
-        console.dir(roketFlay);
-
-        document.getElementById("roketStay").style.display = 'none';
-        //document.getElementById("blokStar").style.display = 'none';
-        document.getElementById('timer').style.display = 'none';
-
-
-        // calculate how much let palivo is available if 100% overhaul is allowed
-
-        let palivo = 70;
-
-        if (palivo <= 70) {
-          let palivo = document.querySelector('#palivo');
-          alert('заправлено около 70% топлива');
-          let plusPalivo = prompt('сколько еще дозаправить ?');
-          palivo.innerText = Number(palivo.innerText) + Number(plusPalivo);
-
-        } else if (palivo <= 80) {
-          alert('заправлено около 80% топлива');
-          prompt('до полного бака 20% ?')
-
-        } else if (palivo <= 90) {
-          alert('заправлено около 90% топлива');
-          prompt('до полного бака 10% дозаправить?')
-
-        } else if (palivo == 100) {
-          alert('заправлено до полного - можно лететь');
-        };
-
-        if (palivo < 90) {
-          alert('вылет задерживается-недостаточно топлива')
-          console.log(palivo)
-        } else if (palivo >= 100) {
-          alert('заправлено больше допустимого уровня - можем рвануть');
-          console.log(palivo)
-        }
-
-
-          var ekipazhBort = document.querySelector('#ekipazh');
-          var maxEkip = 5;
-          var ekipaZh = [Math.floor(Math.random() * maxEkip)];
-          ekipazhBort.innerText = Number(ekipaZh);
-
-        if (ekipaZh == 4) {
-
-          alert('Все на месте. Можно взлетать.');
-          console.log(ekipazhBort);
-
-        } else if (ekipaZh == 3) {
-          alert('Нехватает 1 члена экипажа')
-          document.getElementById("roketStay");
-          document.getElementById("roketFlay1").style.display = 'none';
-
-        } else if (ekipaZh < 3) {
-          alert('Вообще народу мало')
-          document.getElementById("roketStay");
-          document.getElementById("roketFlay1").style.display = 'none';
-
-        }
-
-        console.log(ekipazhBort);
-
-
+    
+            } else if (ekipazh == 3) {
+              alert('Нехватает 1 члена экипажа')
+              document.getElementById("roketStay");
+              document.getElementById("roketFlay1").style.display = 'none';
+    
+            } else if (ekipazh < 3) {
+              alert('Вообще народу мало')
+              document.getElementById("roketStay");
+              document.getElementById("roketFlay1").style.display = 'none';
+    
+            }
+    
+            console.log(ekipazhBort);
+          }
+        }, 1000);
       }
-    }, 1000);
-  }
-           var ekipazhBort = document.querySelector('#ekipazh');
-          var maxEkip = 5;
-          var ekipaZh = [Math.floor(Math.random() * maxEkip)];
-          ekipazhBort.innerText = Number(ekipaZh);
+              let ekipazhBort = document.querySelector('#ekipazh');
+              let maxEkip = 5;
+              let ekipazh = [Math.floor(Math.random() * maxEkip)];
+              ekipazhBort.innerText = Number(ekipazh);
+    
+              console.log(ekipazhBort); 
+    
+    
+    </script>
 
-          console.log(ekipazhBort);
-
-
-</script>
-
+</body>
 </html>

@@ -184,14 +184,14 @@ p {
   width: 400px;
   height: auto;
 }
-.vzlet img {
+#roketFlay1 {
   position: absolute;
   top: 0;
-  width: 400px;
+  width: 300px;
   height: auto;
   transition: top 5s ease-out 0s;
 }
 
-.vzlet img:hover {
-  top: -300px;
+#roketFlay1:hover {
+  top: -800px;
 }
