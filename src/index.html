@@ -83,11 +83,12 @@
             // calculate how much let palivo is available if 100% overhaul is allowed
     
             let palivo = 70;
+            let plusPalivo = prompt('сколько еще дозаправить ?');
     
             if (palivo <= 70) {
               let palivo = document.querySelector('#palivo');
               alert('заправлено около 70% топлива');
-              let plusPalivo = prompt('сколько еще дозаправить ?');
+              //let plusPalivo = prompt('сколько еще дозаправить ?');
               palivo.innerText = Number(palivo.innerText) + Number(plusPalivo);
     
             } else if (palivo <= 80) {
